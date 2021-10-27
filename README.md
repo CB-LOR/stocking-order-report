@@ -1,4 +1,4 @@
-# LOR Stocking Order Form
+# LOR Stocking Order Report
 
 This project contains source code and supporting files for a serverless micro-service application that can be deployed with the SAM CLI. It includes the following files and folders.
 
