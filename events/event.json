@@ -1,7 +1,8 @@
 {
+  "body": "{\"email\": \"batman@gmail.com\", \"orderStatus\": \"delivered\"}",
   "resource": "/stocking/signup",
   "path": "/stocking/signup",
-  "httpMethod": "GET",
+  "httpMethod": "POST",
   "isBase64Encoded": false,
   "queryStringParameters": {
     "foo": "bar"
@@ -54,7 +55,7 @@
     },
     "path": "/prod/stocking/signup",
     "resourcePath": "/stocking/signup",
-    "httpMethod": "GET",
+    "httpMethod": "POST",
     "apiId": "1234567890",
     "protocol": "HTTP/1.1"
   }
