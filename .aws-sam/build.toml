@@ -9,4 +9,12 @@ architecture = "x86_64"
 packagetype = "Zip"
 functions = ["OrderReportFunction"]
 
+[function_build_definitions.900dfbd6-601d-4e28-a5a1-c8b06ba82b18]
+codeuri = "/Users/kmacattack/SnakePit/lor-stocking-drive/stocking-order-report/orderUpdate"
+runtime = "python3.9"
+source_md5 = ""
+architecture = "x86_64"
+packagetype = "Zip"
+functions = ["OrderUpdateFunction"]
+
 [layer_build_definitions]
