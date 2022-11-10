@@ -20,7 +20,7 @@ def lambda_handler(event, context):
             'email': status_update['email'],
             'order_ts': status_update['order_ts']
         },
-        UpdateExpression='set order_ts=:ts, orderStatus=:os',
+        UpdateExpression='set order_update_ts=:ts, orderStatus=:os',
         ExpressionAttributeValues={
             ':ts': status_update['order_update_ts'],
             ':os': status_update['orderStatus']
