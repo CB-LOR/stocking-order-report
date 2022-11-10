@@ -17,11 +17,12 @@ def lambda_handler(event, context):
     # Get all data from table
     order_item = table.update_item(
         Key={
-            'email': status_update['email']
+            'email': status_update['email'],
+            'order_ts': status_update['order_ts']
         },
-        UpdateExpression='set order_ts=:ts, orderStatus=:os',
+        UpdateExpression='set order_update_ts=:ts, orderStatus=:os',
         ExpressionAttributeValues={
-            ':ts': status_update['order_ts'],
+            ':ts': status_update['order_update_ts'],
             ':os': status_update['orderStatus']
         },
         ReturnValues="UPDATED_NEW"
@@ -47,7 +48,7 @@ class DecimalEncoder(json.JSONEncoder):
 
 
 def add_order_timestamp(order):
-    order['order_ts'] = str(datetime.now())
+    order['order_update_ts'] = str(datetime.now())
 
 
 def parse_event(event):
@@ -56,6 +57,7 @@ def parse_event(event):
         body = json.loads(event['body'])
         return {
             'email': body['email'],
+            'order_ts': body['order_ts'],
             'orderStatus': body['orderStatus']
         }
     except Exception as e:
